@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <title>Historia automobilov Skoda</title>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<nav>
+    <a href="index.html">Domov</a>
+    <a href="novinky.html">Novinky</a>
+    <a href="models.html">Prehľad modelov</a>
+    <a href="technika.html">Technika</a>
+    <a href="galeria.html">Galéria</a>
+    <a href="kontakt.html">Kontakt</a>
+</nav>
+
+<main class="main_kontakt">
+    <section class="uvod_text">
+        <h1>Kontakt</h1>
+        <p>
+            <strong>Peter Bako</strong><br>
+            Jasovská 43<br>
+            851 07 Bratislava<br>
+            Slovensko
+        </p>
+
+        <p>
+            <strong>E‑mail:</strong> <a href="mailto:petusko1981@gmail.com">petusko1981@gmail.com</a><br>
+            <strong>Telefón:</strong> <a href="tel:0907780741">0907 780 741</a>
+        </p>
+
+
+            <img src="image/adresa.jpg" class="mapa" alt="Mapa – adresa" >
+
+    </section>
+    <section class="uvod_text">
+        <h1>Objednajte si Model automobilu Skoda.</h1>
+        <form action="index.php" id="objednavka" name="objednavka" method="post">
+            <label for="meno">Meno:</label>
+            <input type="text" name="meno" id="meno" required><br>
+            <label for="priezvisko">Priezvisko:</label>
+            <input type="text" name="priezvisko" id="priezvisko" required><br>
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" required><br>
+            <label for="katalogtyp">Druh Katalogu:</label>
+            <select id="katalogtyp" name="katalogtyp">
+                <option value="Skoda1000">Skoda 1000 MB</option>
+                <option value="Skoda120">Skoda 120</option>
+                <option value="SkodaFavorit">Skoda Favorit</option>
+                <option value="SkodaOctavia">Skoda Octavia</option>
+            </select><br>
+            <label for="18">Velkosť modelu 1:18</label>
+            <input type="radio" name="velskost" value="18" id="18"><br>
+            <label for="36">Velkosť modelu 1:36</label>
+            <input type="radio" name="velskost" value="36" id="36"><br>
+            <label for="suhlas">Suhlasim s podmienkami:</label>
+            <input type="checkbox" name="suhlas" id="suhlas"><br>
+
+            <button type="submit">Objednať</button>
+        </form>
+    </section>
+
+</main>
+
+<footer>
+    <p>&copy; 2026 Peter Bako</p>
+</footer>
+
+</body>
+</html>
