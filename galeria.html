@@ -2,98 +2,102 @@
 <html lang="sk">
 <head>
     <meta charset="UTF-8">
-    <title>Skoda Portal - galeria.</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
+    <title>Galeria mojích škodoviek</title>
+    <link rel="stylesheet" href="css/style.css">
+<style>
 
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background: #f4f4f4;
-        }
 
-        header {
-            background: #130558;
-            color: white;
-            padding: 15px;
-            text-align: center;
-        }
-
-        nav {
-            background: #376478;
-            padding: 12px;
-            text-align: center;
-        }
-
-        nav a {
-            color: white;
-            margin: 10px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        nav a:hover {
-            color: orange;
-        }
-
-        section {
-            padding: 20px;
-            margin: 10px;
-            background: white;
-            border-radius: 8px;
-            #border-style: solid;
-            border-color: #000000;
-
-        }
-
-        footer {
-            background: #111;
-            color: white;
-            text-align: center;
-            padding: 10px;
-        }
-    </style>
+</style>
 </head>
-<body>
 
-<header>
-    <h1>Historia Škoda od 1969</h1>
-    <p>Tento portál vás prevedie jednotlivými modelmi aut Škoda
-    </p>
-</header>
+<body>
 
 <nav>
     <a href="index.html">Domov</a>
     <a href="novinky.html">Novinky</a>
-    <a href="models.html">Prehlad modelov</a>
+    <a href="models.html">Prehľad modelov</a>
     <a href="technika.html">Technika</a>
     <a href="galeria.html">Galéria</a>
     <a href="kontakt.html">Kontakt</a>
 </nav>
 
-<section id="home">
-    <h2>Galeria</h2>
-    <p>Vitaj na portáli o škodovkach! Najdeš tu stručný prehlad modelov od roku 1969.</p>
-    <p>Od takzvaneho <i>"Embecka"</i></p>
-    <img src="image/embecko.jpg">
-</section>
+<main class="">
+    <h1>Galéria mojích škodoviek.</h1>
+    <section>
+        <div class="gallery" id="gallery"></div>
 
-<section id="omne">
-    <h2>O mne</h2>
-    <p>Mám 44 rokov, pracujem ako IT manager v jednej nemenovanej firme.</p>
-    <p>Medzi moje hoby patria počítače, auta a rodina.</p>
-    <p>Momentálne študujem na jednej s najlepších vysokých škôl v SR – <a href="https://www.paneurouni.com/fakulta-informatiky/" target="_blank">PEWS.</a></p>
-</section>
+        <div class="lightbox" id="lightbox">
+            <span class="close" onclick="closeLightbox()">✖</span>
+            <span class="arrow left" onclick="prevImage()">❮</span>
+            <img id="lightbox-img">
+            <span class="arrow right" onclick="nextImage()">❯</span>
+        </div>
 
-<section id="Zamer">
-    <h2>Zámer</h2>
-    <p>Vzdy som sa zaujimal o auta , mal som rozne značky, ale nakoniec som skoncil pri skoda octavia 3</p>
-    <img src="image/octavia-silver3.jpg"/>
-    <img src="image/octavia3zadok.jpg"/>
-</section>
+        <script>
+            const gallery = document.getElementById("gallery");
+            const lightbox = document.getElementById("lightbox");
+            const lightboxImg = document.getElementById("lightbox-img");
+
+            const totalImages = 17;
+            let currentIndex = 0;
+            const images = [];
+
+            // Generovanie obrázkov
+            for (let i = 1; i <= totalImages; i++) {
+                let num = String(i).padStart(3, '0');
+                let filename = `foto/i${num}.jpg`;
+                images.push(filename);
+
+                let img = document.createElement("img");
+                img.src = filename;
+                img.onclick = () => openLightbox(i - 1);
+
+                gallery.appendChild(img);
+            }
+
+            function openLightbox(index) {
+                currentIndex = index;
+                lightbox.style.display = "flex";
+                lightboxImg.src = images[currentIndex];
+            }
+
+            function closeLightbox() {
+                lightbox.style.display = "none";
+            }
+
+            function nextImage() {
+                currentIndex = (currentIndex + 1) % images.length;
+                lightboxImg.src = images[currentIndex];
+            }
+
+            function prevImage() {
+                currentIndex = (currentIndex - 1 + images.length) % images.length;
+                lightboxImg.src = images[currentIndex];
+            }
+
+            // klik mimo obrázka zatvorí
+            lightbox.addEventListener("click", (e) => {
+                if (e.target === lightbox) {
+                    closeLightbox();
+                }
+            });
+
+            // klávesy
+            document.addEventListener("keydown", (e) => {
+                if (lightbox.style.display === "flex") {
+                    if (e.key === "ArrowRight") nextImage();
+                    if (e.key === "ArrowLeft") prevImage();
+                    if (e.key === "Escape") closeLightbox();
+                }
+            });
+        </script>
+
+    </section>
+
+
+
+</main>
+
 
 <footer>
     <p>&copy; 2026 Peter Bako</p>
