@@ -4,7 +4,80 @@
     <meta charset="UTF-8">
     <title>Historia automobilov Skoda</title>
     <link rel="stylesheet" href="css/style.css">
+    <script>
+        /*vypocet ceny*/
+        document.addEventListener('DOMContentLoaded', function() {
 
+            const radios = document.querySelectorAll('input[name="velkostmodelu"]');
+            const cenaDiv = document.getElementById('cena');
+
+            radios.forEach(radio => {
+                radio.addEventListener('change', function() {
+                    if (this.value === '18') {
+                        cenaDiv.textContent = 'Cena: 10€';
+                    } else if (this.value === '36') {
+                        cenaDiv.textContent = 'Cena: 20€';
+                    }
+                });
+            });
+
+        });
+        /*validacia formularu*/
+        document.addEventListener('DOMContentLoaded', function() {
+
+            const form = document.getElementById('objednavka');
+
+            form.addEventListener('submit', function(e) {
+
+                const meno = document.getElementById('meno').value.trim();
+                const priezvisko = document.getElementById('priezvisko').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const radios = document.querySelectorAll('input[name="velkostmodelu"]');
+                const suhlas = document.getElementById('suhlas');
+
+                let chyba = "";
+
+                // meno
+                if (meno === "") {
+                    chyba += "Zadaj meno\n";
+                }
+
+                // priezvisko
+                if (priezvisko === "") {
+                    chyba += "Zadaj priezvisko\n";
+                }
+
+                // email
+                if (!email.includes("@")) {
+                    chyba += "Email musí obsahovať @\n";
+                }
+
+                // radio
+                let vybrate = false;
+                radios.forEach(radio => {
+                    if (radio.checked) {
+                        vybrate = true;
+                    }
+                });
+
+                if (!vybrate) {
+                    chyba += "Vyber veľkosť modelu\n";
+                }
+
+                // checkbox
+                if (!suhlas.checked) {
+                    chyba += "Musíš súhlasiť s podmienkami\n";
+                }
+
+                if (chyba !== "") {
+                    alert(chyba);
+                    e.preventDefault();
+                }
+
+            });
+
+        });
+    </script>
 </head>
 
 <body>
@@ -57,6 +130,8 @@
             <input type="radio" class="radio18" name="velkostmodelu" value="18" id="18"><br>
             <label for="36">Velkosť modelu 1:36</label>
             <input type="radio" class="radio18" name="velkostmodelu" value="36" id="36"><br>
+            <div id="cena">Cena: 10 euro</div>
+
             <label for="suhlas">Suhlasim s podmienkami:</label>
             <input type="checkbox" class="radio18" name="suhlas" id="suhlas"><br>
 
