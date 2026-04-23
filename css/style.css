@@ -2,14 +2,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-size: 16pxs;
+    font-size: 16px;
 }
 
 body {
     font-family: 'Inter', Arial, sans-serif;
     #background-color: #ffffff;
-    color: #black;
-}
+    color: black;
+    }
 
 h1 {
     font-size: 2rem;
@@ -43,6 +43,7 @@ nav a:hover {
 .main_kontakt {
     display: flex;
     flex-direction: row;
+    gap: 20px 20px;
     padding: 5px;
     align-items: flex-start;
     justify-content: center;
@@ -59,7 +60,9 @@ nav a:hover {
     justify-content: center;
     flex-wrap: wrap;
 
-
+img {
+    object-fit: cover;
+}
 }
 
 /* TEXTOVÉ SEKCIe */
@@ -107,7 +110,7 @@ footer {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
-    s
+
 }
 
 .modely_riadok {
