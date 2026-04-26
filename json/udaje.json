@@ -1,0 +1,106 @@
+{
+  "auta": [
+    {
+      "model": "Škoda 1000 MB",
+      "rok": 1964,
+      "motor": {
+        "typ": "1.0",
+        "vykon": {
+          "koni": 42,
+          "kw": 31
+        },
+        "maximalna_rychlost": 120
+      },
+      "rozmery": {
+        "dlzka": 4170,
+        "sirka": 1620,
+        "vyska": 1380
+      }
+    },
+    {
+      "model": "Škoda 100",
+      "rok": 1969,
+      "motor": {
+        "typ": "1.0",
+        "vykon": {
+          "koni": 42,
+          "kw": 31
+        },
+        "maximalna_rychlost": 125
+      },
+      "rozmery": {
+        "dlzka": 4155,
+        "sirka": 1620,
+        "vyska": 1380
+      }
+    },
+    {
+      "model": "Škoda 120",
+      "rok": 1976,
+      "motor": {
+        "typ": "1.2",
+        "vykon": {
+          "koni": 52,
+          "kw": 38
+        },
+        "maximalna_rychlost": 140
+      },
+      "rozmery": {
+        "dlzka": 4160,
+        "sirka": 1610,
+        "vyska": 1400
+      }
+    },
+    {
+      "model": "Škoda Favorit",
+      "rok": 1987,
+      "motor": {
+        "typ": "1.3",
+        "vykon": {
+          "koni": 62,
+          "kw": 46
+        },
+        "maximalna_rychlost": 150
+      },
+      "rozmery": {
+        "dlzka": 3815,
+        "sirka": 1635,
+        "vyska": 1415
+      }
+    },
+    {
+      "model": "Škoda Felicia",
+      "rok": 1994,
+      "motor": {
+        "typ": "1.3",
+        "vykon": {
+          "koni": 68,
+          "kw": 50
+        },
+        "maximalna_rychlost": 160
+      },
+      "rozmery": {
+        "dlzka": 3855,
+        "sirka": 1635,
+        "vyska": 1415
+      }
+    },
+    {
+      "model": "Škoda Octavia I",
+      "rok": 1996,
+      "motor": {
+        "typ": "1.9 TDI",
+        "vykon": {
+          "koni": 90,
+          "kw": 66
+        },
+        "maximalna_rychlost": 180
+      },
+      "rozmery": {
+        "dlzka": 4511,
+        "sirka": 1731,
+        "vyska": 1431
+      }
+    }
+  ]
+}

@@ -243,5 +243,20 @@ button {
 .arrow.right {
     right: 20px;
 }
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #333;
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color: #34e411;
+}
 
 

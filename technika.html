@@ -22,6 +22,62 @@
     <h1>Technické údaje škodoviek</h1>
 
 </main>
+<section>
+    <table>
+        <thead>
+        <tr>
+            <th>Model</th>
+            <th>Rok výroby</th>
+            <th>Typ motora</th>
+            <th>Výkon (KW)</th>
+            <th>Výkon (Koni)</th>
+            <th>Maximálna rýchlosť</th>
+            <th>Dĺžka</th>
+            <th>Šírka</th>
+            <th>Výška</th>
+        </tr>
+        </thead>
+
+        <tbody id="tabulka"></tbody>
+    </table>
+
+    <script>
+        function nacitajAuta() {
+            const xhr = new XMLHttpRequest();
+
+            xhr.open("GET", "json/udaje.json", true);
+
+            xhr.onload = function () {
+                if (xhr.status === 200) {
+                    const data = JSON.parse(xhr.responseText);
+                    const tabulka = document.getElementById("tabulka");
+
+                    data.auta.forEach(auto => {
+                        const riadok = `
+              <tr>
+                <td>${auto.model}</td>
+                <td>${auto.rok}</td>
+                <td>${auto.motor.typ}</td>
+                <td>${auto.motor.vykon.kw}</td>
+                <td>${auto.motor.vykon.koni}</td>
+                <td>${auto.motor.maximalna_rychlost} km/h</td>
+                <td>${auto.rozmery.dlzka} mm</td>
+                <td>${auto.rozmery.sirka} mm</td>
+                <td>${auto.rozmery.vyska} mm</td>
+              </tr>
+            `;
+
+                        tabulka.innerHTML += riadok;
+                    });
+                }
+            };
+
+            xhr.send();
+        }
+
+        nacitajAuta();
+    </script>
+</section>
 
 
 <footer>
