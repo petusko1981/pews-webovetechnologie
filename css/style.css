@@ -139,6 +139,9 @@ button {
     padding: 12px;
     font-weight: bold;
 }
+button:hover {
+    background-color: #d10f5a;
+}
 .radio18 {
 
     height: 1rem;
@@ -258,5 +261,9 @@ th, td {
 th {
     background-color: #34e411;
 }
-
+#text_chyba {
+    color: red;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
 

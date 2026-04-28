@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <title>Historia automobilov Skoda</title>
     <link rel="stylesheet" href="css/style.css">
+    <meta name="description" content="Historia automobilov Skoda">
+    <meta name="author" content="Peter Bako">
+    <meta name="keywords" content="skoda, historia skodoviek">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>
         /*vypocet ceny*/
         document.addEventListener('DOMContentLoaded', function() {
@@ -38,18 +42,18 @@
                 let chyba = "";
 
                 // meno
-                if (meno === "") {
-                    chyba += "Zadaj meno\n";
+                if (meno === "" || meno.length<3) {
+                    chyba += "Zadaj meno<br>";
                 }
 
                 // priezvisko
-                if (priezvisko === "") {
-                    chyba += "Zadaj priezvisko\n";
+                if (priezvisko === "" || priezvisko.length<3) {
+                    chyba += "Zadaj priezvisko<br>";
                 }
 
                 // email
                 if (!email.includes("@")) {
-                    chyba += "Email musí obsahovať @\n";
+                    chyba += "Email musí obsahovať @<br>";
                 }
 
                 // radio
@@ -61,16 +65,18 @@
                 });
 
                 if (!vybrate) {
-                    chyba += "Vyber veľkosť modelu\n";
+                    chyba += "Vyber veľkosť modelu<br>";
                 }
 
                 // checkbox
                 if (!suhlas.checked) {
-                    chyba += "Musíš súhlasiť s podmienkami\n";
+                    chyba += "Musíš súhlasiť s podmienkami<br>";
                 }
 
                 if (chyba !== "") {
-                    alert(chyba);
+                    //alert(chyba);
+                    let text_chyba = document.getElementById("text_chyba");
+                    text_chyba.innerHTML = chyba;
                     e.preventDefault();
                 }
 
@@ -136,6 +142,7 @@
             <input type="checkbox" class="radio18" name="suhlas" id="suhlas"><br>
 
             <button type="submit">Objednať</button>
+            <div id="text_chyba"></div>
         </form>
     </section>
 
