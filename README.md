@@ -1,3 +1,4 @@
-This website is a development assignment. launch: open index.html, because of the file technika.html it should be opened either by going to or on the webserver for the ajax json solution to work
-2) solution to run, open as project in webstorm and press run button
-note. The contact.html page also contains a form.
+Launching the project:
+1 option: Open or import the project into webstorm and then launch the page via webstorm, only because of the ajax in the file technika.html
+2 option: Copy to a webserver which can also be on windows e.g. xamp or linux. apache.
+If you have any questions please contact me via email or phone.
